@@ -1,5 +1,4 @@
 #include "Textures/All_Textures.ppm"
-#include "Textures/sky.ppm"
 #include "Textures/title.ppm"
 #include "Textures/won.ppm"
 #include "Textures/lost.ppm"
@@ -484,7 +483,7 @@ void init(void)
 	pdy = -sin(degToRad(pa));
 	/* close doors */
 	mapW[19] = 4;
-	mapW[26] = 4
+	mapW[26] = 4;
 	/* Key*/
 	sp[0].type = 1;
 	sp[0].state = 1;

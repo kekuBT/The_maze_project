@@ -1,13 +1,15 @@
+#include "main.h"
+
 void drawSprite(void)
 {
 	int x, y, s;
 	/* pick up key */
-	if (px < sp[0].x + 30 && px > sp[0].x - 30 && py < sp[0].y + 30 && py > sp[0].y - 30)
+	if (plx < sp[0].x + 30 && plx > sp[0].x - 30 && py < sp[0].y + 30 && py > sp[0].y - 30)
 	{
 		sp[0].state = 0;
 	}
 	/* enemy kill */
-	if (px < sp[3].x + 30 && px > sp[3].x - 30 && py < sp[3].y + 30 && py > sp[3].y - 30)
+	if (plx < sp[3].x + 30 && plx > sp[3].x - 30 && py < sp[3].y + 30 && py > sp[3].y - 30)
 	{
 		gameState = 4;
 	}
@@ -20,11 +22,11 @@ void drawSprite(void)
 	/* // normal grid position subtract offset */
 	int spx_sub = ((int)sp[3].x - 15) >> 6, spy_sub = ((int)sp[3].y - 15) >> 6;
 
-	if (sp[3].x > px && mapW[spy * 8 + spx_sub] == 0)
+	if (sp[3].x > plx && mapW[spy * 8 + spx_sub] == 0)
 	{
 		sp[3].x -= 0.06 * fps;
 	}
-	if (sp[3].x < px && mapW[spy * 8 + spx_add] == 0)
+	if (sp[3].x < plx && mapW[spy * 8 + spx_add] == 0)
 	{
 		sp[3].x += 0.06 * fps;
 	}
@@ -40,7 +42,7 @@ void drawSprite(void)
 	for (s = 0; s < 4; s++)
 	{
 		/* temp float variables */
-		float sx = sp[s].x - px;
+		float sx = sp[s].x - plx;
 		float sy = sp[s].y - py;
 		float sz = sp[s].z;
 

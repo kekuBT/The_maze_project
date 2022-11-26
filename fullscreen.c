@@ -1,3 +1,5 @@
+#include "main.h"
+
 void screen(int v)
 {
 	/* draw any full screen image. 120x80 pixels */
@@ -40,4 +42,10 @@ void screen(int v)
 	{
 		fade = 1;
 	}
+}
+
+void resize(int w, int h)
+{
+	/* screen window rescaled, snap back */
+	glutReshapeWindow(960, 640);
 }

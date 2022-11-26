@@ -1,3 +1,5 @@
+#include "main.h"
+
 void ButtonDown(unsigned char key, int x, int y)
 {
 	/* keyboard button pressed down */
@@ -40,7 +42,7 @@ void ButtonDown(unsigned char key, int x, int y)
 		{
 			yo = 25;
 		}
-		int ipx = px / 64.0, ipx_add_xo = (px + xo) / 64.0;
+		int ipx = plx / 64.0, ipx_add_xo = (plx + xo) / 64.0;
 		int ipy = py / 64.0, ipy_add_yo = (py + yo) / 64.0;
 
 		if (mapW[ipy_add_yo * mapX + ipx_add_xo] == 4)

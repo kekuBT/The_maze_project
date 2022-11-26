@@ -1,3 +1,5 @@
+#include "main.h"
+
 void drawRays2D(void)
 {
 	int r, mx, my, mp, dof, side;
@@ -18,23 +20,23 @@ void drawRays2D(void)
 
 		if (cos(degToRad(ra)) > 0.001)
 		{
-			rx = (((int)px >> 6) << 6) + 64;
-			ry = (px - rx) * Tan + py;
+			rx = (((int)plx >> 6) << 6) + 64;
+			ry = (plx - rx) * Tan + py;
 			xo = 64;
 			yo = -xo * Tan;
 		}
 		/* looking left */
 		else if (cos(degToRad(ra)) < -0.001)
 		{
-			rx = (((int)px >> 6) << 6) - 0.0001;
-			ry = (px - rx) * Tan + py;
+			rx = (((int)plx >> 6) << 6) - 0.0001;
+			ry = (plx - rx) * Tan + py;
 			xo = -64;
 			yo = -xo * Tan;
 		}
 		/* looking right */
 		else
 		{
-			rx = px;
+			rx = plx;
 			ry = py;
 			dof = 8;
 		}
@@ -48,7 +50,7 @@ void drawRays2D(void)
 			{
 				vmt = mapW[mp] - 1;
 				dof = 8;
-				disV = cos(degToRad(ra)) * (rx - px) - sin(degToRad(ra)) * (ry - py);
+				disV = cos(degToRad(ra)) * (rx - plx) - sin(degToRad(ra)) * (ry - py);
 			}
 			/* hit */
 			else
@@ -71,7 +73,7 @@ void drawRays2D(void)
 		if (sin(degToRad(ra)) > 0.001)
 		{
 			ry = (((int)py >> 6) << 6) - 0.0001;
-			rx = (py - ry) * Tan + px;
+			rx = (py - ry) * Tan + plx;
 			yo = -64;
 			xo = -yo * Tan;
 		}
@@ -79,14 +81,14 @@ void drawRays2D(void)
 		else if (sin(degToRad(ra)) < -0.001)
 		{
 			ry = (((int)py >> 6) << 6) + 64;
-			rx = (py - ry) * Tan + px;
+			rx = (py - ry) * Tan + plx;
 			yo = 64;
 			xo = -yo * Tan;
 		}
 		else
 		/* looking straight left or right */
 		{
-			rx = px;
+			rx = plx;
 			ry = py;
 			dof = 8;
 		}
@@ -101,7 +103,7 @@ void drawRays2D(void)
 			{
 				hmt = mapW[mp] - 1;
 				dof = 8;
-				disH = cos(degToRad(ra)) * (rx - px) - sin(degToRad(ra)) * (ry - py);
+				disH = cos(degToRad(ra)) * (rx - plx) - sin(degToRad(ra)) * (ry - py);
 			}
 			else
 			/* check next horizontal */
@@ -183,7 +185,7 @@ void drawRays2D(void)
 		{
 			float dy = y - (640 / 2.0), deg = degToRad(ra), raFix = cos(degToRad(FixAng(pa - ra)));
 
-			tx = px / 2 + cos(deg) * 158 * 2 * 32 / dy / raFix;
+			tx = plx / 2 + cos(deg) * 158 * 2 * 32 / dy / raFix;
 			ty = py / 2 - sin(deg) * 158 * 2 * 32 / dy / raFix;
 			int mp = mapF[(int)(ty / 32.0) * mapX + (int)(tx / 32.0)] * 32 * 32;
 			int pixel = (((int)(ty) & 31) * 32 + ((int)(tx) & 31)) * 3 + mp * 3;

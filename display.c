@@ -1,3 +1,5 @@
+#include "main.h"
+
 void display(void)
 {
 	/* frames per second */
@@ -67,7 +69,7 @@ void display(void)
 			yo = 20;
 		}
 		/* // x position and offset  */
-		int ipx = px / 64.0, ipx_add_xo = (px + xo) / 64.0, ipx_sub_xo = (px - xo) / 64.0;
+		int ipx = plx / 64.0, ipx_add_xo = (plx + xo) / 64.0, ipx_sub_xo = (plx - xo) / 64.0;
 		/* y position and offset */
 		int ipy = py / 64.0, ipy_add_yo = (py + yo) / 64.0, ipy_sub_yo = (py - yo) / 64.0;
 		/* move forward */
@@ -75,7 +77,7 @@ void display(void)
 		{
 			if (mapW[ipy * mapX + ipx_add_xo] == 0)
 			{
-				px += pdx * 0.2 * fps;
+				plx += pdx * 0.2 * fps;
 			}
 			if (mapW[ipy_add_yo * mapX + ipx] == 0)
 			{
@@ -87,7 +89,7 @@ void display(void)
 		{
 			if (mapW[ipy * mapX + ipx_sub_xo] == 0)
 			{
-				px -= pdx * 0.2 * fps;
+				plx -= pdx * 0.2 * fps;
 			}
 			if (mapW[ipy_sub_yo * mapX + ipx] == 0)
 			{
@@ -97,7 +99,7 @@ void display(void)
 		drawRays2D();
 		drawSprite();
 		/* Winning block */
-		if ((int)px >> 6 == 1 && (int)py >> 6 == 1)
+		if ((int)plx >> 6 == 1 && (int)py >> 6 == 1)
 		{
 			fade = 0;
 			timer = 0;
@@ -132,4 +134,3 @@ void display(void)
 	glutPostRedisplay();
 	glutSwapBuffers();
 }
-

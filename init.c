@@ -1,8 +1,10 @@
+#include "main.h"
+
 void init(void)
 {
 	/* init all variables when game starts */
 	glClearColor(0.3, 0.3, 0.3, 0);
-	px = 150;
+	plx = 150;
 	py = 400;
 	pa = 90;
 	pdx = cos(degToRad(pa));
@@ -39,4 +41,3 @@ void init(void)
 	sp[3].y = 2 * 64;
 	sp[3].z = 20;
 }
-

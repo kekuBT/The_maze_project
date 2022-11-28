@@ -4,9 +4,7 @@ void ButtonDown(unsigned char key, int x, int y)
 {
 	/* keyboard button pressed down */
 	if (key == 'a')
-	{
-		Keys.a = 1;
-	}
+		{ Keys.a = 1;}
 	if (key == 'd')
 	{
 		Keys.d = 1;

@@ -1,10 +1,19 @@
 #include "header.h"
 
+typedef struct
+/* button state on off */
+{
+	int w, a, d, s;
+} ButtonKeys;
+ButtonKeys Keys;
+
 void ButtonDown(unsigned char key, int x, int y)
 {
 	/* keyboard button pressed down */
 	if (key == 'a')
-		{ Keys.a = 1;}
+	{
+		Keys.a = 1;
+	}
 	if (key == 'd')
 	{
 		Keys.d = 1;

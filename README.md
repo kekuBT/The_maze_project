@@ -15,7 +15,7 @@ Clone the repository, and then compile it with Dev C++ software with those linke
 
 ## Controls
 
-You can move the players with W and S button and you rotate the camera with A and D. You have to find the key to open doors which will help you get out of the maze, but look out for ghosts!!!
+You can move the players with 'W' and 'S' button and you rotate the camera with 'A' and 'D'. You have to find the key to open doors with the key 'o' which will help you get out of the maze, but look out for ghosts!!!
 
 ## Authors
 

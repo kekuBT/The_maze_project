@@ -1,6 +1,21 @@
 #include "header.h"
 
-float degToRad(float a) { return a * M_PI / 180.0; }
+
+/**
+ * degToRad - converts degree to radian
+ * @a: is an argument
+ * Return: returns result
+ */
+float degToRad(float a)
+{
+	return (a * M_PI / 180.0);
+}
+
+/**
+ * FixAng - Fixes the angles
+ * @a: is an argument
+ * Return: returns result
+ */
 float FixAng(float a)
 {
 	if (a > 359)
@@ -13,6 +28,16 @@ float FixAng(float a)
 	}
 	return (a);
 }
+
+/**
+ * distance - calculates the distances
+ * @ax: is an argument
+ * @ay: is an argument
+ * @bx: is an argument
+ * @by: is an argument
+ * @ang: is an argument
+ * Return: returns result
+ */
 float distance(float ax, float ay, float bx, float by, float ang)
 {
 	return (cos(degToRad(ang)) * (bx - ax) - sin(degToRad(ang)) * (by - ay));
@@ -72,6 +97,10 @@ int mapC[] = {
 /* hold wall line depth to compare for sprite depth */
 int depth[120];
 
+/**
+ * drawSprite - drawing enemies and keys
+ * Return: void
+ */
 void drawSprite(void)
 {
 	/* pick up key */
@@ -181,6 +210,10 @@ void drawSprite(void)
 	}
 }
 
+/**
+ * drawRays2D - drawing raycasting rays
+ * Return: void
+ */
 void drawRays2D(void)
 {
 	int r, mx, my, mp, dof, side;
@@ -417,7 +450,10 @@ void drawRays2D(void)
 	}
 }
 
-/* draw any full screen image. 120x80 pixels */
+/**
+ * screen - draw any fullscreen image 120*80 pixels
+ * @v: is an argument
+ */draw any full screen image. 120x80 pixels */
 void screen(int v)
 {
 	int x, y;
@@ -461,7 +497,10 @@ void screen(int v)
 	}
 }
 
-/* init all variables when game starts */
+
+/**
+ * init - initialize all variables when the game start
+ */
 void init(void)
 {
 	glClearColor(0.3, 0.3, 0.3, 0);
@@ -494,6 +533,9 @@ void init(void)
 	sp[3].z = 20;
 }
 
+/**
+ * display - displays all functions
+ */
 void display(void)
 {
 	/* frames per second */
@@ -639,7 +681,13 @@ void display(void)
 	glutSwapBuffers();
 }
 
-/* keyboard button pressed down */
+/**
+ * ButtonDown - Keyboard button pressed down
+ * @key: is an argument
+ * @x: is an argument
+ * @y: is an argument
+ * Return: returns result
+ */
 void ButtonDown(unsigned char key, int x, int y)
 {
 	if (key == 'a')
@@ -694,7 +742,13 @@ void ButtonDown(unsigned char key, int x, int y)
 	glutPostRedisplay();
 }
 
-/* keyboard button pressed up */
+/**
+ * ButtonUp - Keyboard button pressed up
+ * @key: is an argument
+ * @x: is an argument
+ * @y: is an argument
+ * Return: returns result
+ */
 void ButtonUp(unsigned char key, int x, int y)
 {
 	if (key == 'a')
@@ -716,12 +770,22 @@ void ButtonUp(unsigned char key, int x, int y)
 	glutPostRedisplay();
 }
 
-/* screen window rescaled, snap back */
+/**
+ * resize - screen window rescaled, snap back
+ * @w: is an argument
+ * @h: is an argument
+ */
 void resize(int w, int h)
 {
 	glutReshapeWindow(960, 640);
 }
 
+/**
+ * main - openGl glut displays
+ * @argc: is an argument
+ * @argv: is an argument
+ * Return: the display of all function
+ */
 int main(int argc, char *argv[])
 {
 	glutInit(&argc, argv);

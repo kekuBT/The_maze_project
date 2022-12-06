@@ -1,2 +1,0 @@
-/home/kekubt/alx/The_maze_project/src/out/build/CMakeFiles/rebuild_cache.dir
-/home/kekubt/alx/The_maze_project/src/out/build/CMakeFiles/edit_cache.dir

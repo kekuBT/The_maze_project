@@ -10,23 +10,33 @@
 #include <GL/glut.h>
 #include <math.h>
 
+/**
+ * struct - button state on off
+ * @w: forwards
+ * @a: look to the left
+ * @d: look to the right
+ * @s: backwards
+ */
 typedef struct
-/* button state on off */
 {
 	int w, a, d, s;
 } ButtonKeys;
 ButtonKeys Keys;
 
-/* All veriables per sprite */
+/**
+ * struct - All veriables per sprite
+ * @type: static, key, enemy
+ * @state: on off
+ * @map: texture to show
+ * @x: position argument
+ * @y: position argument
+ * @z: position argument
+ */
 typedef struct
 {
-	/* static, key, enemy */
 	int type;
-	/* on off */
 	int state;
-	/* texture to show */
 	int map;
-	/* position */
 	float x, y, z;
 } sprite;
 sprite sp[4];

@@ -1,7 +1,12 @@
 # The Maze Project
 
-This is a game project that is based on wolfestein 3D and it is fun and customizable code.
+This is a game project that is based on [wolfestein 3D](https://en.wikipedia.org/wiki/Wolfenstein_3D) and it is fun and customizable code.
 
+## Landing page
+
+You can checkout the langing page here
+
+[The maze project page](https://kekubt.github.io/The_maze_project/)
 ## Files
 
 |   **File**   |   **Description**   |
@@ -16,6 +21,8 @@ Clone the repository, and then compile it with Dev C++ software with those linke
 ## Controls
 
 You can move the players with 'W' and 'S' button and you rotate the camera with 'A' and 'D'. You have to find the key to open doors with the key 'o' which will help you get out of the maze, but look out for ghosts!!!
+
+![screenshot of the game](https://github.com/kekuBT/The_maze_project/tree/main/images/k.jpg?raw=true)
 
 ## Authors
 

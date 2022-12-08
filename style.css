@@ -9,11 +9,7 @@
 }
 
 body {
-    background: linear-gradient(to top, rgb(0 0 0 / 1), rgb(0 0 0 / .9), rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.8)), url(e.jpg) no-repeat;
-    /* background: url(e.jpg) no-repeat; */
-    background-size: 100%;
-    background-color: #131313;
-
+    background: url(images/p.jpg) no-repeat;
 }
 
 .navbar {

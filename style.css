@@ -70,7 +70,7 @@ button:hover {
     margin-bottom: 15%;
     font-size: 4rem;
     text-align: center;
-    background: rgba(255, 112, 112, 0.047);
+    background: rgb(18, 18, 18);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border-radius: 20px;
@@ -106,7 +106,7 @@ video:hover {
 }
 
 .container-2 {
-    background-color: rgba(21, 21, 21, 0.044);
+    background-color: rgba(18, 18, 18);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border-radius: 20px;
